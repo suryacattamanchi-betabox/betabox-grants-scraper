@@ -1,0 +1,47 @@
+name: Update grants (every 2 weeks)
+
+on:
+  schedule:
+    # Cron can't do "every 14 days" cleanly, so this runs on the 1st and 15th
+    # of each month at 12:00 UTC (8 AM ET) — effectively biweekly.
+    - cron: "0 12 1,15 * *"
+  workflow_dispatch: {} # lets you trigger a scrape manually from the Actions tab
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scraper.py
+
+      - name: Commit updated grants.json
+        run: |
+          git config user.name "grant-radar-bot"
+          git config user.email "actions@github.com"
+          git add site/grants.json
+          git diff --cached --quiet || git commit -m "Biweekly grant scrape $(date +%F)"
+          git push
+
+      - name: Upload site for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
