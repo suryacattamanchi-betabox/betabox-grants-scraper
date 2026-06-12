@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Betabox Grant Radar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14213D;
+    --ink-soft: #4A5572;
+    --paper: #FFFFFF;
+    --panel: #F4F6FA;
+    --line: #E2E7F0;
+    --orange: #FF6B35;
+    --orange-soft: #FFF0E9;
+    --teal: #00A896;
+    --teal-soft: #E3F6F3;
+    --amber: #D98E04;
+    --amber-soft: #FFF5DE;
+    --red: #D7263D;
+    --red-soft: #FBE9EC;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--body); color: var(--ink); background: var(--paper); line-height: 1.55; }
+  a { color: inherit; }
+
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header { border-bottom: 3px solid var(--ink); }
+  .header-inner { display: flex; align-items: baseline; justify-content: space-between; padding: 28px 0 20px; flex-wrap: wrap; gap: 8px; }
+  .logo { font-family: var(--display); font-weight: 700; font-size: 1.45rem; letter-spacing: -0.02em; cursor: pointer; }
+  .logo .dot { color: var(--orange); }
+  .meta-line { font-family: var(--mono); font-size: 0.74rem; color: var(--ink-soft); }
+
+  /* Stats strip */
+  .strip { display: flex; gap: 0; border-bottom: 1px solid var(--line); }
+  .strip-cell { flex: 1; padding: 14px 0; border-right: 1px solid var(--line); }
+  .strip-cell:last-child { border-right: none; }
+  .strip-cell .num { font-family: var(--display); font-weight: 700; font-size: 1.5rem; }
+  .strip-cell .lbl { font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); }
+  .strip-cell:not(:first-child) { padding-left: 18px; }
+
+  /* Filters */
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; padding: 20px 0 4px; }
+  .chip { font-family: var(--mono); font-size: 0.74rem; padding: 6px 13px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--paper); cursor: pointer; color: var(--ink-soft); transition: all .12s ease; }
+  .chip:hover { border-color: var(--ink); color: var(--ink); }
+  .chip.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .chip:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+
+  /* Grant list */
+  .grant-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 22px 0 64px; }
+  @media (max-width: 760px) { .grant-list { grid-template-columns: 1fr; } .strip { flex-wrap: wrap; } .strip-cell { min-width: 45%; } }
+
+  .card { border: 1.5px solid var(--line); border-radius: 10px; padding: 20px; cursor: pointer; transition: border-color .12s ease, transform .12s ease; display: flex; flex-direction: column; gap: 10px; background: var(--paper); }
+  .card:hover { border-color: var(--ink); transform: translateY(-2px); }
+  .card:focus-visible { outline: 2.5px solid var(--orange); outline-offset: 2px; }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+  .card h3 { font-family: var(--display); font-weight: 700; font-size: 1.04rem; letter-spacing: -0.01em; line-height: 1.3; }
+  .card .funder { font-size: 0.83rem; color: var(--ink-soft); }
+  .card .amount { font-family: var(--mono); font-size: 0.8rem; font-weight: 500; }
+  .card-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 8px; }
+
+  .badge { font-family: var(--mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 9px; border-radius: 4px; white-space: nowrap; }
+  .badge.direct { background: var(--orange-soft); color: #B5430F; }
+  .badge.partner { background: var(--teal-soft); color: #00766A; }
+  .badge.monitor { background: var(--panel); color: var(--ink-soft); }
+
+  .deadline { font-family: var(--mono); font-size: 0.74rem; padding: 4px 10px; border-radius: 4px; }
+  .deadline.open { background: var(--teal-soft); color: #00766A; }
+  .deadline.soon { background: var(--amber-soft); color: var(--amber); }
+  .deadline.urgent { background: var(--red-soft); color: var(--red); }
+  .deadline.passed { background: var(--panel); color: var(--ink-soft); text-decoration: line-through; }
+
+  /* Detail view */
+  .detail { padding: 36px 0 80px; max-width: 760px; }
+  .back { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); background: none; border: none; cursor: pointer; padding: 0; margin-bottom: 26px; display: inline-block; }
+  .back:hover { color: var(--orange); }
+  .detail .badges-row { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
+  .detail h1 { font-family: var(--display); font-weight: 700; font-size: 1.9rem; letter-spacing: -0.025em; line-height: 1.18; margin-bottom: 6px; }
+  .detail .funder-line { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 26px; }
+
+  .fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-bottom: 30px; }
+  .fact { background: var(--paper); padding: 14px 18px; }
+  .fact .k { font-family: var(--mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); margin-bottom: 3px; }
+  .fact .v { font-size: 0.9rem; font-weight: 500; }
+  @media (max-width: 560px) { .fact-grid { grid-template-columns: 1fr; } }
+
+  .section { margin-bottom: 28px; }
+  .section h2 { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+  .section p { font-size: 0.95rem; }
+  .angle-box { background: var(--orange-soft); border-left: 3px solid var(--orange); border-radius: 0 8px 8px 0; padding: 16px 18px; font-size: 0.95rem; }
+
+  .contact { display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-bottom: 1px dashed var(--line); }
+  .contact:last-child { border-bottom: none; }
+  .contact .name { font-weight: 600; font-size: 0.93rem; }
+  .contact .role { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-soft); }
+  .contact .info { font-size: 0.86rem; color: var(--ink-soft); }
+
+  .cta { display: inline-block; font-family: var(--display); font-weight: 700; font-size: 0.95rem; background: var(--ink); color: #fff; text-decoration: none; padding: 13px 26px; border-radius: 8px; transition: background .12s ease; }
+  .cta:hover { background: var(--orange); }
+  .cta:focus-visible { outline: 2.5px solid var(--orange); outline-offset: 2px; }
+  .cta-row { display: flex; align-items: center; gap: 14px; margin-top: 8px; }
+  .cta-note { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-soft); }
+
+  .empty { padding: 60px 0; text-align: center; color: var(--ink-soft); font-size: 0.92rem; grid-column: 1 / -1; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="header-inner">
+      <div class="logo" onclick="location.hash=''" role="link" tabindex="0" onkeydown="if(event.key==='Enter')location.hash=''">betabox grant radar<span class="dot">.</span></div>
+      <div class="meta-line" id="updated"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="app"></main>
+
+<script>
+let DATA = { grants: [], last_updated: '' };
+let activeFilter = 'all';
+
+const FIT_LABELS = { direct: 'Direct apply', partner: 'School / partner applies', monitor: 'Market signal' };
+
+function daysUntil(dateStr) {
+  const d = new Date(dateStr + 'T23:59:59');
+  return Math.ceil((d - new Date()) / 86400000);
+}
+
+function deadlineChip(g) {
+  const days = daysUntil(g.deadline);
+  let cls = 'open', label;
+  if (days < 0) { cls = 'passed'; label = 'closed'; }
+  else if (days <= 21) { cls = 'urgent'; label = days + 'd left'; }
+  else if (days <= 60) { cls = 'soon'; label = days + 'd left'; }
+  else { label = new Date(g.deadline + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); }
+  return `<span class="deadline ${cls}">${label}</span>`;
+}
+
+function renderStats() {
+  const total = DATA.grants.length;
+  const direct = DATA.grants.filter(g => g.fit === 'direct').length;
+  const urgent = DATA.grants.filter(g => { const d = daysUntil(g.deadline); return d >= 0 && d <= 60; }).length;
+  const nc = DATA.grants.filter(g => (g.category || '').includes('North Carolina')).length;
+  return `<div class="strip">
+    <div class="strip-cell"><div class="num">${total}</div><div class="lbl">Open opportunities</div></div>
+    <div class="strip-cell"><div class="num">${direct}</div><div class="lbl">Betabox can apply</div></div>
+    <div class="strip-cell"><div class="num">${urgent}</div><div class="lbl">Closing in 60 days</div></div>
+    <div class="strip-cell"><div class="num">${nc}</div><div class="lbl">North Carolina</div></div>
+  </div>`;
+}
+
+function renderList() {
+  const cats = ['all', ...new Set(DATA.grants.map(g => g.category))];
+  const filters = `<div class="filters">` + cats.map(c =>
+    `<button class="chip ${activeFilter === c ? 'active' : ''}" onclick="setFilter('${c.replace(/'/g, "\\'")}')">${c === 'all' ? 'All grants' : c}</button>`
+  ).join('') + `</div>`;
+
+  const shown = DATA.grants
+    .filter(g => activeFilter === 'all' || g.category === activeFilter)
+    .sort((a, b) => {
+      const da = daysUntil(a.deadline), db = daysUntil(b.deadline);
+      if (da < 0 && db >= 0) return 1;
+      if (db < 0 && da >= 0) return -1;
+      return da - db;
+    });
+
+  const cards = shown.length ? shown.map(g => `
+    <div class="card" tabindex="0" role="link" onclick="location.hash='#/grant/${g.id}'" onkeydown="if(event.key==='Enter')location.hash='#/grant/${g.id}'">
+      <div class="card-top">
+        <div>
+          <h3>${g.title}</h3>
+          <div class="funder">${g.funder}</div>
+        </div>
+        <span class="badge ${g.fit}">${FIT_LABELS[g.fit] || g.fit}</span>
+      </div>
+      <div class="amount">${g.amount}</div>
+      <div class="card-bottom">
+        <span style="font-family:var(--mono);font-size:0.7rem;color:var(--ink-soft)">${g.category}</span>
+        ${deadlineChip(g)}
+      </div>
+    </div>`).join('') : `<div class="empty">No grants in this category yet. The next scrape runs in under two weeks.</div>`;
+
+  document.getElementById('app').innerHTML = renderStats() + filters + `<div class="grant-list">${cards}</div>`;
+}
+
+function setFilter(c) { activeFilter = c; renderList(); }
+
+function renderDetail(id) {
+  const g = DATA.grants.find(x => x.id === id);
+  if (!g) { location.hash = ''; return; }
+  const contacts = (g.contacts || []).map(c => `
+    <div class="contact">
+      <div class="name">${c.name}</div>
+      ${c.role ? `<div class="role">${c.role}</div>` : ''}
+      ${c.info ? `<div class="info">${c.info}</div>` : ''}
+      ${c.email ? `<div class="info"><a href="mailto:${c.email}">${c.email}</a></div>` : ''}
+      ${c.phone ? `<div class="info">${c.phone}</div>` : ''}
+    </div>`).join('') || `<p style="color:var(--ink-soft);font-size:0.9rem">No named contacts found yet — check the grant page directly.</p>`;
+
+  document.getElementById('app').innerHTML = `
+    <div class="detail">
+      <button class="back" onclick="location.hash=''">&larr; All opportunities</button>
+      <div class="badges-row">
+        <span class="badge ${g.fit}">${FIT_LABELS[g.fit] || g.fit}</span>
+        ${deadlineChip(g)}
+      </div>
+      <h1>${g.title}</h1>
+      <div class="funder-line">${g.funder}</div>
+      <div class="fact-grid">
+        <div class="fact"><div class="k">Award amount</div><div class="v">${g.amount}</div></div>
+        <div class="fact"><div class="k">Deadline</div><div class="v">${new Date(g.deadline + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</div></div>
+        <div class="fact"><div class="k">Category</div><div class="v">${g.category}</div></div>
+        <div class="fact"><div class="k">Found</div><div class="v">${g.found}</div></div>
+      </div>
+      ${g.deadline_note ? `<div class="section"><h2>Deadline details</h2><p>${g.deadline_note}</p></div>` : ''}
+      <div class="section"><h2>AI summary</h2><p>${g.ai_summary}</p></div>
+      <div class="section"><h2>Why it matters for Betabox</h2><div class="angle-box">${g.betabox_angle}</div></div>
+      <div class="section"><h2>Contacts</h2>${contacts}</div>
+      <div class="cta-row">
+        <a class="cta" href="${g.url}" target="_blank" rel="noopener">Open grant page &rarr;</a>
+        <span class="cta-note">opens funder's site in a new tab</span>
+      </div>
+    </div>`;
+  window.scrollTo(0, 0);
+}
+
+function route() {
+  const m = location.hash.match(/^#\/grant\/(.+)$/);
+  if (m) renderDetail(m[1]); else renderList();
+}
+
+async function init() {
+  try {
+    const res = await fetch('grants.json?v=' + Date.now());
+    DATA = await res.json();
+    document.getElementById('updated').textContent = 'last scrape: ' + DATA.last_updated + ' · refreshes every 2 weeks';
+    route();
+  } catch (e) {
+    document.getElementById('app').innerHTML = '<div class="empty">Could not load grants.json. If you opened this file directly, serve it with a local server (python -m http.server) instead.</div>';
+  }
+}
+
+window.addEventListener('hashchange', route);
+init();
+</script>
+</body>
+</html>

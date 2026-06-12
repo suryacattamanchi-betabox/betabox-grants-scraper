@@ -1,0 +1,278 @@
+{
+  "last_updated": "2026-06-12",
+  "grants": [
+    {
+      "id": "ed-ies-sbir-2026",
+      "title": "ED/IES SBIR Program (Phase IA, IB & Direct to Phase II)",
+      "funder": "U.S. Department of Education / Institute of Education Sciences",
+      "amount": "Up to $250,000 (Phase I) / up to $1.25M (Direct to Phase II)",
+      "deadline": "2026-06-29",
+      "deadline_note": "Phase IA/IB due 11:00 AM ET; Direct to Phase II due 2:00 PM ET",
+      "category": "Federal — R&D",
+      "fit": "direct",
+      "ai_summary": "The Department of Education's SBIR program funds small businesses to develop and commercialize education technology products. It is the single most relevant federal grant for Betabox: it funds for-profit edtech companies directly (no nonprofit partner required) to build, pilot, and evaluate new learning products with students and teachers in real classrooms. Phase IA/IB awards (~$250K) fund prototyping and feasibility testing; Direct to Phase II (~$1.25M) funds full development and commercialization for companies with an existing prototype. Proposals emphasizing an iterative R&D process and pilot studies in authentic school settings score best.",
+      "betabox_angle": "Betabox could propose R&D on a new hands-on STEM learning product or platform feature, piloted with partner schools. Direct to Phase II is plausible given Betabox already has a working product in market. Deadline is June 29, 2026 — about 2 weeks out, so this is urgent for this cycle or a target for FY2027.",
+      "contacts": [
+        {
+          "name": "ED/IES SBIR Program Office",
+          "role": "Program inquiries",
+          "info": "Contact details and Q&A are listed in the official solicitation on ies.ed.gov/sbir"
+        }
+      ],
+      "url": "https://ies.ed.gov/sbir/",
+      "found": "2026-06-12"
+    },
+    {
+      "id": "toshiba-america-foundation",
+      "title": "Toshiba America Foundation STEM Classroom Grants",
+      "funder": "Toshiba America Foundation (TAF)",
+      "amount": "Under $5K (rolling) and over $5K (up to ~$20K) for grades 6-12; up to $1K for K-5",
+      "deadline": "2026-09-01",
+      "deadline_note": "Grades 6-12 under $5K: Mar 1, Jun 1, Sep 1, Dec 1. Over $5K: May 1 & Nov 1. K-5: Oct 1.",
+      "category": "Corporate Foundation",
+      "fit": "partner",
+      "ai_summary": "TAF funds hands-on, project-based STEM learning in classrooms — equipment and materials for experiments, robotics, drones, coding, and sustainability projects. Grants are awarded direct-to-teacher, meaning a classroom teacher applies, not a company. In February 2026 TAF awarded $194,250 across 43 projects for grades 6-12. Quarterly deadlines for small grants make this a recurring, low-friction opportunity.",
+      "betabox_angle": "Teachers at Betabox partner schools can apply for TAF grants to fund Betabox learning experiences as their 'hands-on STEM project.' Betabox could build a grant-application template kit for teachers that pre-writes the project narrative around a Betabox experience.",
+      "contacts": [
+        {
+          "name": "John Anderson",
+          "role": "President, Toshiba America Foundation",
+          "info": "Application portal and program contacts at toshiba.com/taf"
+        }
+      ],
+      "url": "https://www.toshiba.com/taf/",
+      "found": "2026-06-12"
+    },
+    {
+      "id": "nsf-itest",
+      "title": "NSF ITEST — Innovative Technology Experiences for Students and Teachers",
+      "funder": "National Science Foundation",
+      "amount": "Typically $400K – $1.5M per project",
+      "deadline": "2026-11-15",
+      "deadline_note": "Deadline typically falls in November; confirm exact date in the current solicitation",
+      "category": "Federal — R&D",
+      "fit": "direct",
+      "ai_summary": "ITEST funds R&D of innovative models for engaging K-12 students in authentic STEM experiences that build capacity for the future STEM/ICT workforce. Critically, for-profit organizations are eligible to apply, alongside universities and nonprofits. Many funded projects are afterschool, summer, and experiential learning programs — exactly Betabox's category. Strong proposals pair a program model with a research partner and an evaluation plan.",
+      "betabox_angle": "Betabox could apply directly or as a partner with a university research team (UNC, NC State) to study learning outcomes from mobile, hands-on STEM labs. The workforce-pipeline framing fits Betabox's career-connected experiences.",
+      "contacts": [
+        {
+          "name": "NSF ITEST Program Officers",
+          "role": "Program directorate",
+          "info": "Listed on the ITEST program page at nsf.gov; proposals submitted via Research.gov or Grants.gov"
+        }
+      ],
+      "url": "https://www.nsf.gov/funding/opportunities/itest-innovative-technology-experiences-students-teachers",
+      "found": "2026-06-12"
+    },
+    {
+      "id": "bwf-ssep",
+      "title": "Student STEM Enrichment Program (SSEP)",
+      "funder": "Burroughs Wellcome Fund",
+      "amount": "Up to $60,000 per year for 3 years ($180K total)",
+      "deadline": "2027-04-15",
+      "deadline_note": "Annual cycle; applications typically open in winter with a spring deadline — confirm next cycle dates",
+      "category": "Foundation — North Carolina",
+      "fit": "partner",
+      "ai_summary": "SSEP funds creative, hands-on, inquiry-based STEM activities for K-12 students in North Carolina — Burroughs Wellcome Fund's home state. Awards go to nonprofits, schools, and universities (recent awardees include UNC-Chapel Hill, NCSSM, and Wake Forest Health Sciences), with up to $60K/year for three years. The program explicitly prioritizes partnerships and hands-on enrichment outside the standard curriculum — afterschool, summer, and experiential programs.",
+      "betabox_angle": "This is the flagship NC grant for Betabox's home market. Betabox can't apply directly as a for-profit, but it can be the named program provider in a school district's or nonprofit's SSEP application. Three years of recurring funding makes a single won partnership very valuable.",
+      "contacts": [
+        {
+          "name": "Burroughs Wellcome Fund Science Education Program",
+          "role": "Grant administration",
+          "info": "Program staff contacts listed at bwfund.org under Science Education grants"
+        }
+      ],
+      "url": "https://www.bwfund.org/grants/science-education/student-stem-enrichment-program/",
+      "found": "2026-06-12"
+    },
+    {
+      "id": "nc-dpi-stem-engagement",
+      "title": "Increasing Engagement in STEM Grants",
+      "funder": "North Carolina Department of Public Instruction",
+      "amount": "~$1M pool; ~$50K average per public school unit",
+      "deadline": "2026-12-31",
+      "deadline_note": "Tied to NC General Assembly budget cycles — monitor NC DPI announcements for next round",
+      "category": "State — North Carolina",
+      "fit": "partner",
+      "ai_summary": "NC legislature-funded grants distributed by DPI to public school units to engage grades 6-8 students in experiential STEM education programs. The last round drew 68 applications and funded 20 PSUs with nearly $1M. The explicit focus on 'experiential STEM' for middle schoolers maps directly onto Betabox's product, and districts often spend these funds on outside providers.",
+      "betabox_angle": "Betabox should be the line-item vendor in district applications. Sales motion: identify NC districts planning to apply, offer to co-write the experiential STEM program portion of their proposal featuring Betabox field trips and mobile labs.",
+      "contacts": [
+        {
+          "name": "NC DPI Office of Academic Standards / STEM Education",
+          "role": "Program administration",
+          "info": "Press and program contacts via dpi.nc.gov"
+        }
+      ],
+      "url": "https://www.dpi.nc.gov/news/press-releases/2024/03/14/20-north-carolina-public-school-units-receive-nearly-1-million-stem-grants",
+      "found": "2026-06-12"
+    },
+    {
+      "id": "nsf-aisl",
+      "title": "NSF Advancing Informal STEM Learning (AISL)",
+      "funder": "National Science Foundation",
+      "amount": "Varies by track; typically $300K – $3M",
+      "deadline": "2027-01-15",
+      "deadline_note": "Check current solicitation for exact deadline; cycles typically annual",
+      "category": "Federal — R&D",
+      "fit": "direct",
+      "ai_summary": "AISL funds the design, development, and research of STEM learning in informal environments — afterschool programs, museums, libraries, community settings. Project types include Innovations in Development and Broad Implementation, both suited to scaling a proven informal-learning model. Betabox's out-of-classroom, experience-based model is squarely 'informal STEM learning' in NSF's taxonomy.",
+      "betabox_angle": "An Innovations in Development proposal could fund building and studying a new Betabox experience format, ideally with a university research partner to run the learning-outcomes research NSF requires.",
+      "contacts": [
+        {
+          "name": "NSF AISL Program Officers",
+          "role": "Program directorate",
+          "info": "Listed on the AISL program page at nsf.gov"
+        }
+      ],
+      "url": "https://www.nsf.gov/funding/opportunities/aisl-advancing-informal-stem-learning",
+      "found": "2026-06-12"
+    },
+    {
+      "id": "american-honda-foundation",
+      "title": "American Honda Foundation Youth STEM Grants",
+      "funder": "American Honda Foundation",
+      "amount": "$20,000 – $75,000",
+      "deadline": "2026-08-01",
+      "deadline_note": "Quarterly review cycles; check current intake windows on the foundation site",
+      "category": "Corporate Foundation",
+      "fit": "partner",
+      "ai_summary": "AHF funds youth education programs with a specific focus on STEM/STEAM subjects and the environment, favoring programs it describes as imaginative, creative, youthful, and forward-thinking. Grants go to 501(c)(3) nonprofits and public school districts serving K-12 youth. Award sizes are meaningful ($20K-$75K) and the foundation funds nationally.",
+      "betabox_angle": "A school district or nonprofit partner (e.g., a county education foundation) applies with Betabox as the program provider. The 'imaginative and youthful' brand criteria favor Betabox's hands-on, high-energy experience design.",
+      "contacts": [
+        {
+          "name": "American Honda Foundation",
+          "role": "Grant inquiries",
+          "info": "Application and contact info via Honda's corporate community site"
+        }
+      ],
+      "url": "https://www.honda.com/community/applying-for-grants",
+      "found": "2026-06-12"
+    },
+    {
+      "id": "pltw-grants-2026",
+      "title": "Project Lead The Way (PLTW) School Grants 2026-27",
+      "funder": "PLTW & industry partners",
+      "amount": "Varies; covers participation fees, PD, and equipment ($134M awarded historically)",
+      "deadline": "2026-11-06",
+      "deadline_note": "Fall deadlines for the 2027-28 cycle expected around Nov/Dec 2026, mirroring last year's Nov 7 / Dec 5 dates",
+      "category": "Nonprofit / Industry Partnership",
+      "fit": "monitor",
+      "ai_summary": "PLTW awards grants to PreK-12 schools to start or expand STEM and CTE programs in computer science, engineering, and project-based learning, funded by industry partners in engineering and advanced manufacturing. While the grants fund PLTW's own programs (a competitor-adjacent curriculum), the schools that win them are self-identifying as STEM-investment-ready buyers.",
+      "betabox_angle": "Less a funding source, more a lead-gen signal: schools applying for or winning PLTW grants have budget and appetite for hands-on STEM. The scraper flags these as prospecting intel rather than direct revenue.",
+      "contacts": [
+        {
+          "name": "Katie Minihan",
+          "role": "EVP & Chief Impact Officer, PLTW",
+          "info": "Grant program details at pltw.org"
+        }
+      ],
+      "url": "https://www.pltw.org/experience-pltw/grants",
+      "found": "2026-06-12"
+    },
+    {
+      "id": "go-grants-nc",
+      "title": "Go Outside (GO) Grants",
+      "funder": "North Carolina (state-funded outdoor education program)",
+      "amount": "Up to $2,500",
+      "deadline": "2026-12-31",
+      "deadline_note": "Applications open while state funding lasts; rolling",
+      "category": "State — North Carolina",
+      "fit": "partner",
+      "ai_summary": "GO Grants give NC K-12 schools and nonprofits up to $2,500 for outdoor educational experiences, including field trips and visiting programs involving aquariums, zoos, and STEM organizations. Small dollar amounts, but the use case — paying for an external STEM experience provider to visit or host students — is exactly how schools buy Betabox.",
+      "betabox_angle": "Promote GO Grants to NC teachers as a way to cover a Betabox field trip or on-site experience. A $2,500 grant can fully fund a booking, making this a sales-enablement tool: 'here's a grant that pays for us.'",
+      "contacts": [
+        {
+          "name": "GO Grants program (NC)",
+          "role": "Program administration",
+          "info": "Administered through NC outdoor education initiative; details on the program application page"
+        }
+      ],
+      "url": "https://www.instrumentl.com/browse-grants/north-carolina/grants-for-k-12-schools",
+      "found": "2026-06-12"
+    },
+    {
+      "id": "voya-foundation",
+      "title": "Voya Foundation STEM Education Grants",
+      "funder": "Voya Foundation",
+      "amount": "Typically $2,500 – $100,000",
+      "deadline": "2026-12-31",
+      "deadline_note": "Rolling / annual review; confirm current intake on Voya Foundation site",
+      "category": "Corporate Foundation",
+      "fit": "partner",
+      "ai_summary": "Voya Foundation focuses its grantmaking on youth financial resilience and STEM education, funding programs that provide kids in grades K-8 with quality STEM learning experiences. Eligible applicants are 501(c)(3) organizations and schools. The K-8 focus and 'learning experiences' language align well with experiential providers.",
+      "betabox_angle": "Partner-applies model: a school or youth nonprofit applies with Betabox programming as the funded STEM experience. K-8 focus matches Betabox's core grade band.",
+      "contacts": [
+        {
+          "name": "Voya Foundation",
+          "role": "Grant inquiries",
+          "info": "Guidelines and contact form at voya.com/voya-foundation"
+        }
+      ],
+      "url": "https://www.voya.com/page/voya-foundation",
+      "found": "2026-06-12"
+    },
+    {
+      "id": "motorola-solutions-foundation",
+      "title": "Motorola Solutions Foundation Education Grants",
+      "funder": "Motorola Solutions Foundation",
+      "amount": "Typically $10,000 – $50,000",
+      "deadline": "2026-07-31",
+      "deadline_note": "Annual application window typically opens in spring/summer; verify current cycle",
+      "category": "Corporate Foundation",
+      "fit": "partner",
+      "ai_summary": "The Motorola Solutions Foundation funds STEM education programs that prepare teachers and engage students in innovative, hands-on activities, with priority on first responders and underrepresented populations in tech. Grants support nonprofits and educational institutions running hands-on STEM programming — teacher prep plus student engagement is the sweet spot.",
+      "betabox_angle": "A nonprofit or district partner applies to fund Betabox experiences plus teacher PD. The 'hands-on' and 'innovative' criteria are a direct match for Betabox's positioning.",
+      "contacts": [
+        {
+          "name": "Motorola Solutions Foundation",
+          "role": "Grant inquiries",
+          "info": "Application info at motorolasolutions.com/foundation"
+        }
+      ],
+      "url": "https://www.motorolasolutions.com/en_us/about/company-overview/corporate-responsibility/motorola-solutions-foundation.html",
+      "found": "2026-06-12"
+    },
+    {
+      "id": "nsf-drk12",
+      "title": "NSF Discovery Research PreK-12 (DRK-12)",
+      "funder": "National Science Foundation",
+      "amount": "Varies by strand; commonly $450K – $3M",
+      "deadline": "2026-11-30",
+      "deadline_note": "Typically opens in spring with a fall deadline; confirm in current solicitation",
+      "category": "Federal — R&D",
+      "fit": "direct",
+      "ai_summary": "DRK-12 funds projects that significantly enhance preK-12 STEM teaching and learning through research and development of innovative resources, models, and tools. It's research-heavy: proposals need a rigorous study design and usually a university PI. For-profit companies typically participate as subawardees or co-PIs with an academic research partner.",
+      "betabox_angle": "Longer-horizon play: partner with an education research group (UNC School of Education is local) to study Betabox's learning model. Funds research credibility — efficacy data Betabox can then use in every sales conversation.",
+      "contacts": [
+        {
+          "name": "NSF DRK-12 Program Officers",
+          "role": "Program directorate",
+          "info": "Listed on the DRK-12 program page at nsf.gov"
+        }
+      ],
+      "url": "https://www.nsf.gov/funding/opportunities/drk-12-discovery-research-prek-12",
+      "found": "2026-06-12"
+    },
+    {
+      "id": "21st-cclc",
+      "title": "21st Century Community Learning Centers (21st CCLC)",
+      "funder": "U.S. Department of Education (administered by state agencies)",
+      "amount": "Multi-year awards to local programs; often $100K+ per site per year",
+      "deadline": "2026-09-30",
+      "deadline_note": "Each state runs its own competition; NC DPI announces state application windows",
+      "category": "Federal — via State",
+      "fit": "partner",
+      "ai_summary": "21st CCLC is the largest federal funding stream for before-school, after-school, and summer enrichment programs, and funds may be spent on STEM enrichment including technology, robotics kits, and external program providers. Grants flow through state education agencies to districts and community organizations, which then purchase enrichment programming.",
+      "betabox_angle": "Existing 21st CCLC grantees in NC and the Southeast are pre-funded buyers — they already have money earmarked for exactly what Betabox sells. The tool should track state competition announcements and the public lists of funded sites for outbound targeting.",
+      "contacts": [
+        {
+          "name": "NC DPI 21st CCLC Program Office",
+          "role": "State administration",
+          "info": "State program contacts at dpi.nc.gov; federal program info at ed.gov"
+        }
+      ],
+      "url": "https://www.afterschoolalliance.org/stemfunding.cfm",
+      "found": "2026-06-12"
+    }
+  ]
+}
